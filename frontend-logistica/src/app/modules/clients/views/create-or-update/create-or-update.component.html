@@ -1,0 +1,136 @@
+<h1 class="row">
+  <mat-icon aria-hidden="true" aria-label="Client Registry" class="mr-2" color="primary">person</mat-icon>
+  <span class="primary">Clientes</span>
+</h1>
+
+<div class="mt-4"></div>
+
+<form (ngSubmit)="createOrUpdateClient()" [formGroup]="formClient">
+  <h2 class="row">
+    <mat-icon aria-hidden="true" aria-label="Client Registry" class="mr-2" color="primary">account_circle</mat-icon>
+    <span class="primary">Dados Pessoais</span>
+  </h2>
+
+  <div class="row">
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome">
+          <mat-error *ngIf="formClient.controls['nome'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>CNPJ</mat-label>
+          <input matInput formControlName="cnpj" type="number">
+          <mat-error *ngIf="formClient.controls['cnpj'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h2 class="row">
+    <mat-icon aria-hidden="true" aria-label="Client Registry" class="mr-2" color="primary">domain</mat-icon>
+    <span class="primary">Endereço</span>
+  </h2>
+
+  <div class="row">
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Rua</mat-label>
+          <input matInput formControlName="street">
+          <mat-error *ngIf="formClient.controls['street'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Número</mat-label>
+          <input matInput formControlName="number" type="number">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complement">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Setor</mat-label>
+          <input matInput formControlName="neighborhood">
+          <mat-error *ngIf="formClient.controls['neighborhood'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="state">
+          <mat-error *ngIf="formClient.controls['state'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-col">
+      <div class="w-98">
+        <mat-form-field>
+          <mat-label>Latitude</mat-label>
+          <input matInput formControlName="latitude" type="number">
+          <mat-error *ngIf="formClient.controls['latitude'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="d-col">
+      <div class="w-99">
+        <mat-form-field>
+          <mat-label>Longitude</mat-label>
+          <input matInput formControlName="longitude" type="number">
+          <mat-error *ngIf="formClient.controls['longitude'].hasError('required')">
+            Este campo é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="mr-auto"></div>
+    <button mat-raised-button type="submit" color="primary" class="mr-2" [disabled]="formClient.invalid">
+      {{ getSubmitButtonText() }}
+    </button>
+  </div>
+</form>

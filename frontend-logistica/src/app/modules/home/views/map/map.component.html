@@ -1,0 +1,28 @@
+<h1 class="row">
+  <mat-icon aria-hidden="true" aria-label="Add Client" class="mr-2" color="primary">map</mat-icon>
+  <span class="primary">Clientes</span>
+</h1>
+
+<form [formGroup]="usersFilter">
+  <div class="row">
+    <div class="d-col d-col-4">
+      <mat-form-field>
+        <mat-label>Clientes</mat-label>
+        <mat-select multiple formControlName="selectedClients" (selectionChange)="handleChangeSelectValues()">
+          <mat-option *ngFor="let client of clients" [value]="client">
+            [{{ client.cnpj }}] {{client.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+
+<div *ngIf="apiLoaded | async">
+    <google-map [options]="options" width="100%" (mapClick)="handleCreateClientThisLocation($event)">
+      <map-marker
+        *ngFor="let client of filteredClients"
+        [position]="{lat: client.address.latitude, lng: client.address.longitude}"
+      ></map-marker>
+    </google-map>
+</div>

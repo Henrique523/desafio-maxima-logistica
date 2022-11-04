@@ -1,0 +1,11 @@
+.mat-menu-item.primary {
+  color: #3f51b5 !important;
+}
+
+.mat-menu-item.warn {
+  color: #f44336 !important;
+}
+
+.primary {
+  color: #3f51b5 !important;
+}
