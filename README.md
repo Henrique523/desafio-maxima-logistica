@@ -20,7 +20,7 @@ o banco de dados, o usuário criado e sua respectiva senha conforme exemplifica 
 Com o passo a passo acima a imagem Docker do backend já estará gerada e pronta para ser executada.
 
 ## Instalação - frontend
-Para instalar o projeto do frontend, basta abrir a pasta `logistica-frontend` e seguir o passo a passo abaixo:
+Para instalar o projeto do frontend, basta abrir a pasta `frontend-logistica` e seguir o passo a passo abaixo:
 
  - Alterar o arquivo `src/environments/environment.prod.ts` inserindo na chave `mapsKey` os dados enviados pelo Whatsapp 
 para poder utilizar a API do Google Maps e na chave `backendUrl` substituir apenas a porta do backend para a mesma
