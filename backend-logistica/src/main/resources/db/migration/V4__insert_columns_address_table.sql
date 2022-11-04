@@ -1,0 +1,5 @@
+ALTER TABLE logistica.address ADD COLUMN IF NOT EXISTS street VARCHAR(255);
+ALTER TABLE logistica.address ADD COLUMN IF NOT EXISTS number INTEGER;
+ALTER TABLE logistica.address ADD COLUMN IF NOT EXISTS complement VARCHAR(255);
+ALTER TABLE logistica.address ADD COLUMN IF NOT EXISTS neighborhood VARCHAR(255);
+ALTER TABLE logistica.address ADD COLUMN IF NOT EXISTS state VARCHAR(10);

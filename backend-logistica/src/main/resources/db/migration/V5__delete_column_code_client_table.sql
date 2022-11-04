@@ -1,0 +1,1 @@
+ALTER TABLE logistica.client DROP COLUMN IF EXISTS code;

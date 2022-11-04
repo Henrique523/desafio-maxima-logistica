@@ -1,0 +1,21 @@
+version: "2.12"
+services:
+  backend:
+    image: maxima/backend:1.0.0
+    container_name: backend-logistica
+    networks:
+      - bridge-maxima
+    ports:
+      - 8080:8080
+
+  frontend:
+    image: maxima/frontend:1.0.0
+    container_name: frontend-logistica
+    networks:
+      - bridge-maxima
+    ports:
+      - 8081:80
+
+networks:
+  bridge-maxima:
+    driver: bridge

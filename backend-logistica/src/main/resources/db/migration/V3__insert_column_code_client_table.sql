@@ -1,0 +1,1 @@
+ALTER TABLE logistica.client ADD COLUMN IF NOT EXISTS code VARCHAR(255);
